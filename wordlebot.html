@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Wordle Bot</title>
+</head>
+ 
+<body>
+	<script src="wordlebot.js"></script>
+	
+  <style>
+    header .title {
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  #board-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+	line-height: 1;
+	vertical-align: top;
+  }
+  
+  table .results {
+	vertical-align: top;
+	text-align: left;
+	padding: 10px;
+	line-height: 1.5;
+  }
+
+  </style>
+  
+  <header>
+    <div class="title"> WORDLE BOT </div>
+  </header>
+
+<div id="board-container">
+  <p>Enter a solution word and let Wordle Bot solve for it.</p>
+  <input type="text" id="solution"  value="" />
+  <br/>
+  <input type="checkbox" id="list" value="" />
+  <label>Limit to Wordle List (faster)</label>
+  <br/>
+  <input type="checkbox" id="fecal" value="" />
+  <label>Fecal Dumps Mode</label>
+  <br/>
+  <button onclick="solve(document.getElementById('solution').value,document.getElementById('list').checked)" id="solveButton" >Solve</button>
+  <br/>
+  <br/>
+</div>
+
+  <div>
+    <table align="center" class="results">
+      <tr class="results">
+        <td id="emoji" class="results"></td>
+        <td id="attempt" class="results"></td>
+        <td id="stats" class="results"></td>
+      </tr>
+	  <tr class="results">
+		<td id="endgame" class="results"></td>
+	  </tr>
+    </table>
+  </div>  
+    
+</body>
+</html>
+
